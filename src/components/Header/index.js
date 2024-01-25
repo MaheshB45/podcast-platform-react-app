@@ -3,7 +3,7 @@ import "./style.css";
 
 const Header = () => {
   return (
-    <div className='nav'>Header</div>
+    <div className='nav'>Navbar</div>
   )
 }
 
