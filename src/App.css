@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+  /* padding: 2rem; */
+  font-family: sans-serif;
+}
+
+.audio-player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 0.5rem;
+}
+
+/* button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  outline: none;
+  margin: 0 1rem;
+} */
+
+input[type="range"] {
+  filter: hue-rotate(25deg);
+}
+
+.duration-bar {
+  width: 90%;
+  margin: 1rem 0;
+}
+
+.time-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+  width: 800px;
+}
+
+.current-time,
+.remaining-time {
+  font-size: 0.9rem;
+}
+
+.sound-bar {
+  width: 300px;
+}
