@@ -1,12 +1,13 @@
-import React from 'react';
-import Header from '../components/Header';
+import Header from "../components/Header/index";
+import Form from "../components/SignupLoginForm";
 
 const SignUpPage = () => {
-  return (
-    <div>
-      <Header />
-    </div>
-  )
+    return (
+        <>
+          <Header /> 
+          <Form />
+        </>
+    );
 }
 
 export default SignUpPage;
