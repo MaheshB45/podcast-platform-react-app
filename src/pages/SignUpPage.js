@@ -1,5 +1,5 @@
 import Header from "../components/Header/index";
-import Form from "../components/SignupLoginForm";
+import Form from "../components/SignupLoginForm/index";
 
 const SignUpPage = () => {
     return (

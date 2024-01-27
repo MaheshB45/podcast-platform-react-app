@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import './App.css';
-import { Routes, Route,useNavigate } from "react-router-dom";
+import './index.css';
+import { Routes, Route, useNavigate } from "react-router-dom";
 // React libraries
 import { useEffect } from "react";
 // React toastify libraries
@@ -68,8 +68,8 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
-    <ToastContainer />
+    <>
+    
     <Routes>
         <Route path="/" element={<SignUpPage />}></Route>
         <Route element={<PrivateRoute/>}>
@@ -82,7 +82,8 @@ function App() {
         </Route>
           <Route path="/forgotPassword" element={<ForgotPassword/>}></Route>
       </Routes>
-    </div>
+      <ToastContainer />
+    </>
   );
 }
 

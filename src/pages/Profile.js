@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 // Navbar component
 import Header from "../components/Header";
 // imported firebase
