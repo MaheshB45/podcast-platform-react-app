@@ -1,0 +1,122 @@
+.AudioPlayer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4vw;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(
+      177.7deg,
+      rgb(58 129 191) 1.63%,
+      rgb(102 52 175) 148.18%
+    );
+    position: sticky;
+    bottom: 0%;
+    padding: 1rem;
+  }
+  
+  .AudioPlayer button {
+    background-color: white;
+    padding: 0.5rem;
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .Player-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1vw;
+    align-self: flex-start;
+  }
+  
+  .Player-content img {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+  }
+  
+  .Player-content p {
+    color: white;
+    font-size: 1rem;
+  }
+  
+  .logo {
+    color: #3a0955;
+  }
+  
+  .Player-control-buttons {
+    display: flex;
+    gap: 1vw;
+  }
+  
+  .Player-duration {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1vw;
+  }
+  
+  .Player-duration .Audio-duration {
+    appearance: none;
+    width: 30vw;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    /* New additions */
+  
+    height: 6px;
+    background: grey;
+  }
+  
+  .Player-duration .Audio-duration::-webkit-slider-thumb {
+    /* removing default appearance */
+    appearance: none;
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    transition: 0.2s ease-in-out;
+  }
+  
+  .time-span {
+    color: white;
+  }
+  
+  .Volume-control {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+  }
+  
+  .Volume-control .Volume-slider {
+    appearance: none;
+    width: 5vw;
+    cursor: pointer;
+    outline: none;
+    border-radius: 15px;
+    height: 6px;
+    background: whitesmoke;
+  }
+  
+  .Volume-control .Volume-slider::-webkit-slider-thumb {
+    /* removing default appearance */
+    appearance: none;
+    /* creating a custom design */
+    height: 15px;
+    width: 15px;
+    background-color: white;
+    border-radius: 50%;
+    border: none;
+    transition: 0.2s ease-in-out;
+  }
+  
+  @media screen and (min-width: 320px) and (max-width: 768px) {
+    .Volume-control .Volume-slider {
+      width: 10vw;
+    }
+  }

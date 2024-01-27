@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+a{
+    text-decoration: none;
+}
+.PodcastCard{
+    padding: 0.5rem;
+    background: linear-gradient(177.7deg, rgba(58, 129, 191, 0.3) 1.63%, rgba(65, 48, 90, 0.009) 148.18%);
+    border-radius: 20px;
+    transition: all 0.1s ease-in-out;
+}
+
+.PodcastCard:hover{
+    box-shadow: 0px 0px 10px 7px #7575f6;
+}
+
+.PodcastCard-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4vh;
+}
+
+.PodcastCard-bannerImage{
+  object-fit: fill;
+  height: 30vh;
+  width: 35vh;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.PodcastCard-title{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    font-family: 'Inter';
+}
+
+@media screen and (min-width:320px) and (max-width:500px) {
+    .PodcastCard-bannerImage{
+        height: 30vh;
+    }
+}
