@@ -7,24 +7,33 @@ import { Navigate ,Outlet } from 'react-router-dom';
 // React toastifu library
 import {toast} from "react-toastify"
 
-// PrivateRoute css
-import "./PrivateRoute.css";
+// Loader css
+import "./PrivateRoute.css"
 
 const PrivateRoute = () => {
     const [user, loading, error] = useAuthState(auth);
   
     if(loading)
     {
-        return <div className='body'>
-            <div className='loading' style={{color:"white"}}>Loading...</div>
-        </div>;
+        return <div className="wrapper">
+        <div className="lds-roller">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>;
     }
     if(error || !user)
     {
         toast.error("Please Signup or Login");
-       return <Navigate to="/" replace></Navigate>
+       return <Navigate to="/" replace />
     } 
-    return <Outlet></Outlet>
+    return <Outlet />
 }
 
 export default PrivateRoute;

@@ -37,7 +37,12 @@ a:hover {
 }
 
 body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
   background-color: #20062e;
+  color: #FFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body::-webkit-scrollbar {
@@ -47,14 +52,22 @@ body::-webkit-scrollbar {
 /* Track */
 body::-webkit-scrollbar-track {
   border-radius: 10px;
-  background: #cac7bd;
+  background: #bdc0ca;
 }
 
 /* Handle */
 body::-webkit-scrollbar-thumb {
   border-radius: 10px;
-  background: #3397ec;
+  background: #67b1f1;
 }
+
+input {
+  font-family: "Inter", sans-serif;
+}
+
+a {
+  text-decoration: none;
+} 
 
 /* Podcasts page*/
 .Podcasts-holder {

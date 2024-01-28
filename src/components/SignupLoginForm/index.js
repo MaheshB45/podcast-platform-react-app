@@ -25,7 +25,7 @@ import Button from "../Button/index";
 import InputComponent from "../Input/index";
 import FileInput from "../Input/FileInput";
 
-const Form = () => {
+const SignupLoginForm = () => {
   //useReducer to handel form state
   const [formState, formDispatch] = useReducer(formReducer, {
     fullName: "",
@@ -248,7 +248,7 @@ const Form = () => {
           ""
         )}
         {!isLogin ? (
-          <FileInput id={"Profile-img"} name={"Profile"} accept={"image/*"} callback={formDispatch} />
+          <FileInput id={"Profile-img"} name={"Profile"} accept={"image/*"} onFileSelected={(file) => formDispatch({ type: "PROFILE", payLoad: file })} />
         ) : (
           ""
         )}
@@ -297,4 +297,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default SignupLoginForm;

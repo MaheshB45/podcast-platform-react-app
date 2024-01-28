@@ -128,7 +128,7 @@ const EditProfileForm = () => {
           id={"Profile-img"}
           name={"Profile"}
           accept={"image/*"}
-          callback={formDispatch}
+          onFileSelected={(file) => formDispatch({ type: "PROFILE", payLoad: file })}
         ></FileInput>
         {!formState.loading ? (
           <Button type={"submit"} text={"Change now"} />

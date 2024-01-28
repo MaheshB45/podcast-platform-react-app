@@ -42,20 +42,21 @@ const Podcasts = () => {
 
   //   Function to search for podcast
   function handelSearch(e) {
-    if (e.target.value === "") {
+    const searchTerm = e.target.value.toLowerCase();
+
+    if (searchTerm === "") {
       dispatch(setFilterPodcasts([]));
+      return;
     }
     // Filtering out the podcast
-    let newArray =
-      podcasts.length > 0 &&
-      podcasts.filter(
-        (val) =>
-          val.details.title
-            .toLowerCase()
-            .substring(0, e.target.value.length) ===
-          e.target.value.toLowerCase()
-      );
-    podcasts.length > 0 && dispatch(setFilterPodcasts(newArray));
+  const newArray = podcasts.filter((val) => {
+    const titleSubstring = val.details.title.toLowerCase().substring(0, searchTerm.length);
+    console.log("Title Substring:", titleSubstring);
+    console.log("Search Term:", searchTerm);
+    return titleSubstring === searchTerm;
+  });
+
+  dispatch(setFilterPodcasts(newArray));
   }
 
   // console.log(podcasts);

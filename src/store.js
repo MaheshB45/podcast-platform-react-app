@@ -5,10 +5,12 @@ import userReducer from "./slices/userSlice";
 import podcastReducer from "./slices/podcastSlice";
 import episodeReducer from "./slices/episodeSlice";
 
-export default configureStore({
+const store = configureStore({
   reducer: {
     user: userReducer,
-    podcast: podcastReducer,
+    podcasts: podcastReducer,
     episode: episodeReducer,
   },
 });
+
+export default store;

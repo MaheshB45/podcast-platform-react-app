@@ -1,10 +1,10 @@
 import React from "react";
 import "./style.css";
-function Button({ text, onClick }) {
+const Button = ({id,className,text,callback,type}) => {
   return (
-    <div className="custom-button" onClick={() => onClick()}>
-      {text}
-    </div>
+      <>
+        <button type={type} id={id} className={className} onClick={callback}>{text}</button>  
+      </>
   );
 }
 

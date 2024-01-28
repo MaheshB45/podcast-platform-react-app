@@ -115,8 +115,8 @@ const PodcastForm = () => {
             <form onSubmit={handelSubmit}>
             <InputComponent type="text" onInput={(e)=>{formDispatch({type:"TITLE",payLoad:e.target.value})}} maxLength={20} value={formState.PodcastTitle} placeholder="Podcast Title"></InputComponent>
             <InputComponent type="text" onInput={(e)=>{formDispatch({type:"DESCRIPTION",payLoad:e.target.value})}} value={formState.PodcastDescription} placeholder="Podcast Description"></InputComponent>
-            <FileInput id={"Banner-img"}  name={"Banner"} accept={"image/*"} callback={formDispatch} />
-            <FileInput id={"Small-img"}  name={"Small"} accept={"image/*"} callback={formDispatch} />
+            <FileInput id={"Banner-img"} text="Banner Image" name={"Banner"} accept={"image/*"} onFileSelected={(file) => formDispatch({ type: "BANNER", payLoad: file })} />
+            <FileInput id={"Small-img"} text="Podcast Image" name={"Small"} accept={"image/*"} onFileSelected={(file) => formDispatch({ type: "SMALL", payLoad: file })} />
             {
                 formState.loading? <Button className="Loading" text={"Loading..."}></Button> : <Button type="submit" text={"Create Now"}></Button>
             }
