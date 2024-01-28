@@ -248,7 +248,7 @@ const SignupLoginForm = () => {
           ""
         )}
         {!isLogin ? (
-          <FileInput id={"Profile-img"} name={"Profile"} accept={"image/*"} onFileSelected={(file) => formDispatch({ type: "PROFILE", payLoad: file })} />
+          <FileInput id={"Profile-img"} text={"Upload Profile Image"} name={"Profile"} accept={"image/*"} onFileSelected={(file) => formDispatch({ type: "PROFILE", payLoad: file })} />
         ) : (
           ""
         )}

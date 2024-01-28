@@ -6,23 +6,7 @@
   --grey: #d7d7d7;
   --purple-grey: #8f8297;
 }
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background-color: var(--theme);
-  color: var(--white);
-}
 
-input {
-  font-family: "Inter", sans-serif;
-}
-
-a {
-  text-decoration: none;
-} */
-/*
 a:hover {
   color: var(--white);
   transition: all 0.3s;
@@ -34,6 +18,14 @@ a:hover {
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter";
+}
+
+:root {
+  --theme: #20062e;
+  --blue: #18b2de;
+  --white: #fff;
+  --grey: #d7d7d7;
+  --purple-grey: #8f8297;
 }
 
 body {
@@ -68,6 +60,11 @@ input {
 a {
   text-decoration: none;
 } 
+
+a:hover {
+  color: #FFF;
+  transition: all 0.3s;
+}
 
 /* Podcasts page*/
 .Podcasts-holder {
