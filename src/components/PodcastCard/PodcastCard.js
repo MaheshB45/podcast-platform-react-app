@@ -5,19 +5,14 @@ import "./PodcastCard.css";
 // React router dom
 import { Link } from "react-router-dom";
 
-const PodcastCard = ({ image, title , id }) => {
-
-  
+const PodcastCard = ({ image, title, id }) => {
   return (
     <Link to={`/PodcastDetails/${id}`}>
-     <div className="PodcastCard">
-      <div className="PodcastCard-content">
-        <img className="PodcastCard-bannerImage" src={image} loading="lazy"/>
-        <p className="PodcastCard-title">{title}</p>
+      <div className="podcast-card">
+        <img className="display-img-podcast" src={image} />
+        <p className="title-podcast">{title}</p>
       </div>
-    </div>
     </Link>
-   
   );
 };
 

@@ -49,22 +49,25 @@ const Podcasts = () => {
       return;
     }
     // Filtering out the podcast
-  const newArray = podcasts.filter((val) => {
-    const titleSubstring = val.details.title.toLowerCase().substring(0, searchTerm.length);
-    console.log("Title Substring:", titleSubstring);
-    console.log("Search Term:", searchTerm);
-    return titleSubstring === searchTerm;
-  });
+    const newArray = podcasts.filter((val) => {
+      const titleSubstring = val.details.title
+        .toLowerCase()
+        .substring(0, searchTerm.length);
+      console.log("Title Substring:", titleSubstring);
+      console.log("Search Term:", searchTerm);
+      return titleSubstring === searchTerm;
+    });
 
-  dispatch(setFilterPodcasts(newArray));
+    dispatch(setFilterPodcasts(newArray));
   }
 
   // console.log(podcasts);
   return (
-    <div className="Podcasts">
+    <>
       <Header />
-      <div className="Podcasts-holder">
-        <h1 className="Podcasts-heading">Discover Podcasts</h1>
+      <div className="input-wrapper">
+        <h1>Discover Podcasts</h1>
+
         <InputComponent
           type="text"
           placeholder={"Search for a title"}
@@ -99,7 +102,7 @@ const Podcasts = () => {
               ))}
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

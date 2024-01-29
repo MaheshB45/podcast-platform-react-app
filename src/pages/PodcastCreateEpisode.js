@@ -1,20 +1,21 @@
 // React router dom
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 // NavBar component
-import Header from '../components/Header';
+import Header from "../components/Header";
 // Episode Form component
-import EpisodeForm from '../components/EpisodeForm/EpisodeForm';
+import EpisodeForm from "../components/EpisodeForm/EpisodeForm";
 
 const PodcastCreateEpisode = () => {
+  const { id } = useParams();
 
-    const {id} = useParams();
-
-    return (
-        <div className='PodcastCreateEpisode'>
-            <Header />
-            <EpisodeForm  podcastId={id}/>
-        </div>
-    );
-}
+  return (
+    <>
+      <Header />
+      <div className="input-wrapper">
+        <EpisodeForm podcastId={id} />
+      </div>
+    </>
+  );
+};
 
 export default PodcastCreateEpisode;

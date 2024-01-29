@@ -5,12 +5,14 @@ import Header from "../components/Header";
 import EditProfileForm from "../components/EditProfileForm/EditProfileForm";
 
 const EditProfile = () => {
-    return (
-        <div className="EditProfile">
-            <Header/>
-           <EditProfileForm/>
-        </div>
-    );
-}
+  return (
+    <>
+      <Header />
+      <div className="input-wrapper">
+        <EditProfileForm />
+      </div>
+    </>
+  );
+};
 
 export default EditProfile;

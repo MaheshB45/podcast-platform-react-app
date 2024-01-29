@@ -1,5 +1,3 @@
-import "./EditProfileForm.css";
-
 // React-router-dom library
 import { useNavigate } from "react-router-dom";
 
@@ -113,13 +111,14 @@ const EditProfileForm = () => {
   }
 
   return (
-    <div className="Form">
-      <h1>Edit profile.</h1>
+    <div className="input-wrapper">
+      <h1 className="heading-page">Edit Profile</h1>
+      <br />
       <form onSubmit={handleSubmit}>
         <InputComponent
           type={"text"}
           name={"fullName"}
-          placeholder={"Enter new name."}
+          placeholder={"Enter New Name."}
           onInput={(e) => {
             formDispatch({ type: "FULLNAME", payLoad: e.target.value });
           }}
@@ -131,7 +130,7 @@ const EditProfileForm = () => {
           onFileSelected={(file) => formDispatch({ type: "PROFILE", payLoad: file })}
         ></FileInput>
         {!formState.loading ? (
-          <Button type={"submit"} text={"Change now"} />
+          <Button type={"submit"} text={"Update Now"} />
         ) : (
           <Button
             type={"button"}

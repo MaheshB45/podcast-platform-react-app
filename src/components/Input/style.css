@@ -1,43 +1,40 @@
-.custom-input {
-    border: 2px solid var(--purple-grey);
-    border-radius: 0.3rem;
-    padding: 1rem;
-    color: var(--white);
-    background-color: transparent;
-    font-size: 1rem;
-    margin: 1rem;
-    width: 80%;
-    font-family: "Inter";
-    font-weight: 500;
-  }
-  
-  .custom-input::placeholder {
-    color: var(--purple-grey);
-  }
-  
-  .custom-input:focus {
-    outline: none;
-    border-color: var(--white);
-    transition: all 0.3s;
-  }
-  
-  .custom-input-file-button {
-    font-weight: 500;
-    width: 80%;
-    margin: 1rem;
-    margin-bottom: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 0.2rem;
-    padding: 1rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 3px dashed var(--purple-grey);
-  }
-  
-  .custom-input-file-button:hover {
-    border: 3px solid var(--white);
-    transition: all 0.5s;
-    cursor: pointer;
-  }
+.custom-input ,.custom-input-file-button{
+  background-color: var(--theme);
+  color: var(--white);
+  border: 2px solid var(--purple-grey);
+  border-radius: 0.35rem;
+  padding: 0.6rem;
+  font-family: "Inter";
+  font-size: 1rem;
+  font-weight: 500;
+  width: 70vw;
+  margin: 0.6rem;
+}
+
+.custom-input::placeholder {
+  color: var(--purple-grey);
+}
+
+.custom-input:focus {
+  outline: none;
+  border-color: var(--white);
+  transition: all 0.3s;
+}
+
+.label-input {
+  color: var(--purple-grey);
+}
+
+.active {
+  border-color: var(--white);
+}
+
+.custom-input-file-button {
+  border: 3px dashed var(--purple-grey);
+}
+
+.custom-input-file-button:hover {
+  border: 3px solid var(--white);
+  transition: all 0.5s;
+  cursor: pointer;
+}

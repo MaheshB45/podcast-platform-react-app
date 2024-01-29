@@ -37,10 +37,10 @@ const Profile = () => {
   }
 
   return (
-    <div className="Profile">
+    <>
       <Header />
 
-      <div className="Profile-holder">
+      <div className="input-wrapper">
         <div className="Profile-content">
           {user ? (
             <div className="Profile-img-holder">
@@ -56,7 +56,7 @@ const Profile = () => {
 
           {user ? (
             <h1
-              style={{ textAlign: "center", color: "white", padding: "3rem" }}
+              style={{ textAlign: "center", color: "white", padding: "1rem" }}
             >
               Welcome {user.fullName}
             </h1>
@@ -81,7 +81,7 @@ const Profile = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

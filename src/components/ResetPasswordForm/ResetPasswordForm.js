@@ -1,5 +1,3 @@
-import "./ResetPasswordForm.css";
-
 // react library
 import { useReducer } from "react";
 
@@ -72,12 +70,12 @@ const ResetPasswordForm = () => {
 
 
   return (
-    <div className="Form">
+    <div className="input-wrapper">
       <h1>Reset Password</h1>
       <form onSubmit={handelSubmit}>
         <InputComponent placeholder={"Enter your email"} type={"email"} value={formState.email} onInput={(e)=>{formDispatch({type:"EMAIL",payload : e.target.value})}} required={true}/>
         {
-            !formState.loading ? <Button type={"submit"} text={"Reset"}/> : <Button type={"button"} className={"Loading"} text={"L O A D I N G . . ."}/>
+            !formState.loading ? <Button type={"submit"} text={"Reset Now"}/> : <Button type={"button"} className={"Loading"} text={"L O A D I N G . . ."}/>
         }
       </form>
     </div>

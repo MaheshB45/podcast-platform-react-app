@@ -4,12 +4,14 @@ import Header from "../components/Header";
 import ResetPasswordForm from "../components/ResetPasswordForm/ResetPasswordForm";
 
 const ForgotPassword = () => {
-    return (
-        <div className='ForgotPassword'>
-           <Header/>
-           <ResetPasswordForm/> 
-        </div>
-    );
-}
+  return (
+    <>
+      <Header />
+      <div className="input-wrapper">
+        <ResetPasswordForm />
+      </div>
+    </>
+  );
+};
 
 export default ForgotPassword;

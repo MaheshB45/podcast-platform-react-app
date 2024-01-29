@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import "./EpisodeForm.css";
 
 // React router dom library
 import { useNavigate } from "react-router-dom";
@@ -104,7 +103,7 @@ const EpisodeForm = ({ podcastId }) => {
   }
 
   return (
-    <div className="Form">
+    <div className="input-wrapper">
       <h1>Create An Episode</h1>
       <form onSubmit={handelSubmit}>
         <InputComponent

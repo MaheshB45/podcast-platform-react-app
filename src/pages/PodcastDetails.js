@@ -57,8 +57,7 @@ const PodcastDetails = () => {
           arr.push({ id: doc.id, isPlaying: false, ...doc.data() });
         });
         setEpisodes(arr);
-      },
-
+      }
     );
 
     return () => {
@@ -81,64 +80,70 @@ const PodcastDetails = () => {
   }
 
   return (
-    <div className="PodcastDetails">
+    <>
       <Header />
-      {podDetails.id ? (
-        <div className="Pod-Details">
-          <div className="Pod-title-button-holder">
-            <p className="Pod-title">{podDetails.title}</p>
-            {auth.currentUser.uid === podDetails.createdBy && (
-              <Button
-                className={"Pod-create-episode-button"}
-                callback={() => {
-                  Navigate(`/podcast/create-episode/${id}`);
-                }}
-                text={"Create Episode"}
-              />
-            )}
-          </div>
-          {/* Podcast details section */}
-          <div className="Pod-banner">
-          <img src={podDetails.bannerImage} alt="No-Image" title={podDetails.bannerImage} />
-          </div>
-          <p className="Pod-description">{podDetails.description}</p>
-          {/* Episode section */}
-          <div className="Pod-episodes">
-            <h3 className="Episode-heading" style={{ color: "white" }}>
-              Episodes
-            </h3>
-            {episodes.length > 0 ? (
-              episodes.map((val, index) => (
-                <EpisodeCard
-                  key={val.id}
-                  episode={val}
-                  index={index}
-                  setplaySound={setplaySound}
-                  play={val.isPlaying}
-                  episodes={episodes}
-                  setEpisodes={setEpisodes}
+      <div className="PodcastDetails">
+        {podDetails.id ? (
+          <div className="Pod-Details">
+            <div className="Pod-title-button-holder">
+              <p className="Pod-title">{podDetails.title}</p>
+              {auth.currentUser.uid === podDetails.createdBy && (
+                <Button
+                  className={"Pod-create-episode-button"}
+                  callback={() => {
+                    Navigate(`/podcast/create-episode/${id}`);
+                  }}
+                  text={"Create Episode"}
                 />
-              ))
-            ) : (
-              <h3 style={{ color: "white", alignSelf: "center" }}>
-                No episodes added
-              </h3>
-            )}
+              )}
+            </div>
+            {/* Podcast details section */}
+            <div className="Pod-banner">
+              <img
+                src={podDetails.bannerImage}
+                alt="No-Image"
+                title={podDetails.bannerImage}
+              />
+            </div>
+            <p className="podcast-desc">{podDetails.description}</p>
+            {/* Episode section */}
+            <div className="Pod-episodes">
+              <h2 className="Episode-heading">
+                Episodes
+              </h2>
+              {episodes.length > 0 ? (
+                episodes.map((val, index) => (
+                  <EpisodeCard
+                    key={val.id}
+                    episode={val}
+                    index={index}
+                    setplaySound={setplaySound}
+                    play={val.isPlaying}
+                    episodes={episodes}
+                    setEpisodes={setEpisodes}
+                  />
+                ))
+              ) : (
+                <h3 style={{ color: "white", alignSelf: "center" }}>
+                  No episodes added
+                </h3>
+              )}
+            </div>
           </div>
-        </div>
-      ) : (
-        ""
-      )}
-      {playSound !== "" ? (
-        <AudioPlayer
-          src={playSound.audio}
-          image={podDetails.smallImage}
-          name={playSound.title}
-        />
-      ) : (
-        ""
-      )}
-    </div>
+        ) : (
+          ""
+        )}
+        {playSound !== "" ? (
+          <AudioPlayer
+            src={playSound.audio}
+            image={podDetails.smallImage}
+            name={playSound.title}
+          />
+        ) : (
+          ""
+        )}
+      </div>
+    </>
   );
 };
 

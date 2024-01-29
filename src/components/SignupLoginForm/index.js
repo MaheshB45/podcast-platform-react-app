@@ -1,16 +1,14 @@
-import "./style.css";
 // React Library
 import { useReducer, useState } from "react";
 
 //Firebase library
-import { auth,storage, db } from "../../firebase";
-import { setDoc, getDoc, doc} from "firebase/firestore";
+import { auth, storage, db } from "../../firebase";
+import { setDoc, getDoc, doc } from "firebase/firestore";
 import { getDownloadURL, ref, uploadBytes } from "firebase/storage";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-
 
 // Redux Library
 import { setUser } from "../../slices/userSlice";
@@ -119,21 +117,24 @@ const SignupLoginForm = () => {
           formState.password
         );
         const user = userCredentials.user;
-         
-        //Storing the user profile in storage 
-        const profileImgRef = ref(storage,`images/profile_images/${user.uid}/${Date.now()}`);
-        
+
+        //Storing the user profile in storage
+        const profileImgRef = ref(
+          storage,
+          `images/profile_images/${user.uid}/${Date.now()}`
+        );
+
         // uploading the profile image
-        await uploadBytes(profileImgRef,formState.profileImage);
+        await uploadBytes(profileImgRef, formState.profileImage);
 
         // Downloading the profile image URL
-       const profileURL = await getDownloadURL(profileImgRef);
+        const profileURL = await getDownloadURL(profileImgRef);
 
         //Storing the user in the database
         await setDoc(doc(db, "users", user.uid), {
           fullName: formState.fullName,
           email: formState.email,
-          profileURL : profileURL,
+          profileURL: profileURL,
           uid: user.uid,
         });
 
@@ -142,7 +143,7 @@ const SignupLoginForm = () => {
           setUser({
             fullName: formState.fullName,
             email: formState.email,
-            profileURL:profileURL,
+            profileURL: profileURL,
             uid: user.uid,
           })
         );
@@ -193,8 +194,8 @@ const SignupLoginForm = () => {
   }
 
   return (
-    <div className="Form">
-      <h1>{!isLogin ? "SignUp" : "LogIn"}</h1>
+    <div className="input-wrapper">
+      <h1 className="heading-page">{!isLogin ? <h1>SignUp</h1> : <h1>LogIn</h1>}</h1>
       <form onSubmit={handelSubmit}>
         {!isLogin ? (
           <InputComponent
@@ -248,7 +249,15 @@ const SignupLoginForm = () => {
           ""
         )}
         {!isLogin ? (
-          <FileInput id={"Profile-img"} text={"Upload Profile Image"} name={"Profile"} accept={"image/*"} onFileSelected={(file) => formDispatch({ type: "PROFILE", payLoad: file })} />
+          <FileInput
+            id={"Profile-img"}
+            text={"Upload Profile Image"}
+            name={"Profile"}
+            accept={"image/*"}
+            onFileSelected={(file) =>
+              formDispatch({ type: "PROFILE", payLoad: file })
+            }
+          />
         ) : (
           ""
         )}

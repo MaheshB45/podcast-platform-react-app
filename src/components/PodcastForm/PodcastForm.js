@@ -17,8 +17,6 @@ import { toast } from "react-toastify";
 import { useSelector } from "react-redux";
 // React router library
 import { useNavigate } from "react-router-dom";
-// PodcastForm css imported
-import "./PodcastForm.css";
 
 const PodcastForm = () => {
 
@@ -110,8 +108,9 @@ const PodcastForm = () => {
     }
  
     return (
-        <div className='Form'>
-            <h1>Create A Podcast</h1>
+        <div className='input-wrapper'>
+            <h1 className="heading-page">Create A Podcast</h1>
+            <br />
             <form onSubmit={handelSubmit}>
             <InputComponent type="text" onInput={(e)=>{formDispatch({type:"TITLE",payLoad:e.target.value})}} maxLength={20} value={formState.PodcastTitle} placeholder="Podcast Title"></InputComponent>
             <InputComponent type="text" onInput={(e)=>{formDispatch({type:"DESCRIPTION",payLoad:e.target.value})}} value={formState.PodcastDescription} placeholder="Podcast Description"></InputComponent>
