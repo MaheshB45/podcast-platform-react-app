@@ -108,9 +108,9 @@ const PodcastDetails = () => {
             <p className="podcast-desc">{podDetails.description}</p>
             {/* Episode section */}
             <div className="Pod-episodes">
-              <h2 className="Episode-heading">
+              <h3 className="Episode-heading">
                 Episodes
-              </h2>
+              </h3>
               {episodes.length > 0 ? (
                 episodes.map((val, index) => (
                   <EpisodeCard

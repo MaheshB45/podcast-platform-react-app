@@ -63,11 +63,10 @@ const Profile = () => {
           ) : (
             ""
           )}
-          <div className="Button-holder">
+          <div>
             {user ? (
               <Button
                 text={"Logout"}
-                className={"Logout-button"}
                 callback={handelSignOut}
               />
             ) : (
@@ -75,7 +74,7 @@ const Profile = () => {
             )}
             {
               user ? (
-                <Button text={"Edit Profile"} className={"Edit-profile-button"} callback={()=>{navigate("/editProfile")}} />
+                <Button text={"Edit Profile"} callback={()=>{navigate("/editProfile")}} />
               ): ""
             }
           </div>

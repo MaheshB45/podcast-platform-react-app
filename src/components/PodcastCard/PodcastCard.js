@@ -9,7 +9,7 @@ const PodcastCard = ({ image, title, id }) => {
   return (
     <Link to={`/PodcastDetails/${id}`}>
       <div className="podcast-card">
-        <img className="display-img-podcast" src={image} />
+        <img className="display-img-podcast" src={image} loading="lazy" />
         <p className="title-podcast">{title}</p>
       </div>
     </Link>

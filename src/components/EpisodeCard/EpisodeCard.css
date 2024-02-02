@@ -1,5 +1,5 @@
 .Pod-episode-name{
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 600;
    }
     
@@ -15,19 +15,19 @@
       align-items: flex-start;
       padding: 1rem;
       gap: 3vh;
-      color: white;
+      color: var(--white);
       border-radius: 20px;
    
     }
     
     .Pod-episode-play-button{
       background-color: transparent;
-      color: white;
-      border: 2px solid white;
-      padding: 0.8rem;
+      color: var(--white);
+      border: 2px solid var(--white);
       cursor: pointer;
       border-radius: 5px;
       width:30vw;
+      
     }
   
     .Pod-episode-play-button:hover{

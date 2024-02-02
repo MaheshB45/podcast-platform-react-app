@@ -40,11 +40,11 @@ const EpisodeCard = ({ episode, index, setplaySound, play,episodes,setEpisodes }
   return (
     <>
       <div className="Pod-episode">
-      <h1 style={{textAlign: "left", marginBottom: 0}}>{`${index + 1}.) ${episode.title}`}</h1>
-        <p style={{marginLeft: "1.5rem"}} className="Pod-episode-description">{episode.description}</p>
+      <p className="Pod-episode-name">{`${index + 1}.) ${episode.title}`}</p>
+        <p className="Pod-episode-description">{episode.description}</p>
         {play ? (
           <Button
-            className={"Pod-episode-play-button"}
+            className="Pod-episode-play-button"
             text={<FaPause/>}
             callback={() => {
               handlePlay();
@@ -53,7 +53,7 @@ const EpisodeCard = ({ episode, index, setplaySound, play,episodes,setEpisodes }
           />
         ) : (
           <Button
-            className={"Pod-episode-play-button"}
+            className="Pod-episode-play-button"
             text={<FaPlay/>}
             callback={() => {
               handlePause();
